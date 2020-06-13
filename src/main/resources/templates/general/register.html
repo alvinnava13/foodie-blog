@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head">
+    <meta charset="UTF-8">
+    <title>Foodie - Register</title>
+</head>
+<body>
+<header th:replace="fragments/header :: top"></header>
+
+<div class="container pt-5" style="width: 40%">
+
+    <form th:object="${user}" th:action="@{/register}" method="post" class="pt-5">
+        <div class="form-group">
+            <label for="username"><strong>Username</strong></label>
+            <input type="text" class="form-control" id="username" name="username" th:field="*{username}">
+        </div>
+
+        <div class="form-group">
+            <label for="password"><strong>Password</strong></label>
+            <input type="password" class="form-control" id="password" name="password" th:field="*{password}">
+        </div>
+
+        <div class="form-group">
+            <label for="passwordConfirmed"><strong>Confirm</strong></label>
+            <input type="password" class="form-control" id="passwordConfirmed" name="passwordConfirmed" th:field="*{passwordConfirmed}">
+        </div>
+
+        <div class="form-group">
+            <label for="firstName"><strong>First Name</strong></label>
+            <input type="text" class="form-control" id="firstName" name="firstName" th:field="*{firstName}">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName"><strong>Last Name</strong></label>
+            <input type="text" class="form-control" id="lastName" name="lastName" th:field="*{lastName}">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
