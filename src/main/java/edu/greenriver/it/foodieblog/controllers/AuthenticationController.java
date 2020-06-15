@@ -22,4 +22,10 @@ public class AuthenticationController
         model.addAttribute("user", new User());
         return "/general/register";
     }
+
+    @GetMapping("/login")
+    public String login()
+    {
+        return "/general/login";
+    }
 }
