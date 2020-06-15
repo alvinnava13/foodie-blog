@@ -14,8 +14,15 @@ public class UserService
         this.userRepository = userRepository;
     }
 
+    public Iterable<User> getUsers()
+    {
+        return userRepository.findAll();
+    }
+
     public User getUser(String username)
     {
-        return userRepository.getUserByUsername(username).orElse(null);
+        return userRepository
+                .getUserByUsername(username)
+                .orElse(null);
     }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head">
+    <meta charset="UTF-8">
+    <title>Foodie - User Profile</title>
+</head>
+<body>
+<header th:replace="fragments/header :: top"></header>
+
+<h1>User</h1>
+
+<!-- Lender info -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="pb-3 pt-5" th:text="${user.username}"></h1>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Id: </strong><span th:text="${user.id}"></span>
+                </li>
+                <li class="list-group-item">
+                    <strong>Username: </strong><span th:text="${user.username}"></span>
+                </li>
+                <li class="list-group-item">
+                    <strong>First Name: </strong><span th:text="${user.firstName}"></span>
+                </li>
+                <li class="list-group-item">
+                    <strong>Last Name: </strong><span th:text="${user.lastName}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
