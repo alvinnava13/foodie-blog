@@ -7,6 +7,48 @@
 <body>
 <header th:replace="fragments/header :: top"></header>
 
-<h1>All Recipes</h1>
+<div class="container pb-5">
+
+    <!-- Card deck -->
+    <div class="card-deck pt-5 mb-4">
+        <!-- Card -->
+        <div th:each="recipe : ${recipes}" class="col">
+            <div class="card mx-auto mb-4">
+                <!--Card image-->
+                <div class="view overlay">
+                    <img class="card-img-top" th:src="@{${recipe.image}}"
+                         alt="${recipe.title}">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!-- Category -->
+                    <a href="" class="orange-text">
+                        <h6 class="h6 pb-1 deep-orange-lighter-hover" th:text="${recipe.category}"><i class="fas fa-utensils"></i></h6>
+                    </a>
+                    <!--Title-->
+                    <h4 class="card-title" th:text="${recipe.recipeTitle}"></h4>
+                    <!--Text-->
+                    <p class="card-text" th:text="${recipe.description}"></p>
+                    <!--Text-->
+                    <p class="card-text orange-text" th:text="${recipe.timeToCook}"></p>
+                    <!--Text-->
+                    <p class="card-text" th:text="${recipe.posted}"></p>
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                </div>
+            </div>
+
+
+            <!-- Card -->
+        </div>
+    </div>
+    <!-- Card deck -->
+
+</div>
+
 </body>
 </html>
