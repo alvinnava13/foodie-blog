@@ -9,41 +9,44 @@
 
 <div class="container pt-5" style="width: 60%">
 
-    <!-- Default form register -->
-    <form th:object="${user}" th:action="@{/register}" method="post" class="text-center border border-light p-5 mx-auto my-auto">
+    <div class="outer-form">
+        <!-- Default form register -->
+        <form th:object="${user}" th:action="@{/register}" method="post" class="text-center border border-light p-5 mx-auto my-auto">
 
-        <p class="h4 mb-4">Sign up</p>
+            <p class="h4 mb-4">Sign up</p>
 
-        <div class="form-row mb-4">
-            <div class="col">
-                <!-- First name -->
-                <input type="text" id="firstName" class="form-control" placeholder="First name" th:field="*{firstName}">
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- First name -->
+                    <input type="text" id="firstName" class="form-control" placeholder="First name" th:field="*{firstName}">
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <input type="text" id="lastName" class="form-control" placeholder="Last name" th:field="*{lastName}">
+                </div>
             </div>
-            <div class="col">
-                <!-- Last name -->
-                <input type="text" id="lastName" class="form-control" placeholder="Last name" th:field="*{lastName}">
-            </div>
-        </div>
 
-        <!-- Username -->
-        <input type="text" id="username" class="form-control mb-4" placeholder="Username" th:field="*{username}">
+            <!-- Username -->
+            <input type="text" id="username" class="form-control mb-4" placeholder="Username" th:field="*{username}">
 
-        <!-- Password -->
+            <!-- Password -->
 
-        <input type="password" id="password" class="form-control mb-4" placeholder="Password" th:field="*{password}">
+            <input type="password" id="password" class="form-control mb-4" placeholder="Password" th:field="*{password}">
 
-        <!-- Confirm Password -->
-        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" th:field="*{passwordConfirmed}">
+            <!-- Confirm Password -->
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" th:field="*{passwordConfirmed}">
 
-        <!-- Sign up button -->
-        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+            <!-- Sign up button -->
+            <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
 
 
-        <hr>
+            <hr>
 
 
-    </form>
-    <!-- Default form register -->
+        </form>
+        <!-- Default form register -->
+    </div>
+
 </div>
 
 </body>
